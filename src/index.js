@@ -1,12 +1,19 @@
-
+let minValue
+let maxValue
+let avgValue
 exports.min = function min (array) {
-  return 0;
+  minValue = (array === undefined || array.length === 0) ? 0 : array.sort((a, b)=> a-b).shift() ;
+  
+  return minValue;
 }
-
 exports.max = function max (array) {
-  return 0;
+  maxValue = (array === undefined || array.length === 0) ? 0 : array.sort((a, b)=> a-b).pop();
+  
+  return maxValue;
 }
 
 exports.avg = function avg (array) {
-  return 0;
+  avgValue = (array === undefined || array.length === 0) ? 0 : array.reduce((a, b) => (a + b)) / array.length;
+  
+  return avgValue;
 }
